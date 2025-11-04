@@ -4,10 +4,12 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 // --- Configuration ---
 // IMPORTANT: This must match the URL of your running Flask API
+// IMPORTANT: Use the Vite standard access and the live URL as the fallback.
+const LIVE_RENDER_URL = 'https://operational-certainty-platform-ocp-demo.onrender.com';
+
 const API_URL = 
-  process.env.VITE_REACT_APP_API_URL || 
-  process.env.REACT_APP_API_URL || 
-  'http://localhost:5000'; // Fallback for local dev
+  import.meta.env.VITE_API_URL || 
+  LIVE_RENDER_URL;
 
 // --- Utility Components ---
 
