@@ -4,7 +4,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 // --- Configuration ---
 // IMPORTANT: This must match the URL of your running Flask API
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = 
+  process.env.VITE_REACT_APP_API_URL || 
+  process.env.REACT_APP_API_URL || 
+  'http://localhost:5000'; // Fallback for local dev
 
 // --- Utility Components ---
 
