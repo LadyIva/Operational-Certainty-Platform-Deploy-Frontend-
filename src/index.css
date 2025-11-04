@@ -1,0 +1,13 @@
+/* src/index.css */
+
+/*
+  We are reverting to the standard Tailwind directives (@tailwind)
+  because direct file imports failed due to package export restrictions.
+  The PostCSS configuration file must be named and formatted correctly
+  to resolve the plugin loading error.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS can be added here if necessary */

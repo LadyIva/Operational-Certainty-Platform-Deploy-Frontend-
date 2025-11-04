@@ -1,0 +1,31 @@
+# Dependency directory (Crucial)
+node_modules/
+
+# Build Output directory (Crucial for Netlify)
+# Netlify runs 'npm run build' and then publishes this folder.
+dist/
+build/
+out/
+
+# Log files
+npm-debug.log
+yarn-error.log
+
+# Local secrets and environment variables
+# These should NOT be committed, as Netlify handles the VITE_REACT_APP_API_URL separately.
+.env
+.env.local
+.env.*.local
+
+# IDE and OS files
+.vscode/
+.DS_Store
+
+
+### Key Takeaways:
+
+1.  **`node_modules/`:** This is the local folder where `npm` or `yarn` installs all your dependencies. It is massive and must never be committed to Git.
+2.  **`dist/`:** This is the folder that the **Netlify build process creates**. It contains the optimized, ready-to-deploy static files. Since Netlify creates it, you shouldn't commit it.
+3.  **Python files:** You can remove any Python-specific entries (like `__pycache__` or `*.pyc`) that might have accidentally carried over from your backend development, as they are not relevant to this frontend repository.
+
+Once you have this file in your new frontend folder, run your `git add .` and `git commit` commands, and you will be ready for a clean push to your new GitHub repository!
