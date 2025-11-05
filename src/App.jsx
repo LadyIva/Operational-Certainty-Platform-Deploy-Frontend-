@@ -3,13 +3,13 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadialBarChart, RadialBar, Legend, ReferenceLine, BarChart, Bar } from 'recharts';
 
 // --- Configuration ---
-// IMPORTANT: This must match the URL of your running Flask API
-// IMPORTANT: Use the Vite standard access and the live URL as the fallback.
-const LIVE_RENDER_URL = 'https://operational-certainty-platform-ocp-demo.onrender.com';
+// IMPORTANT: Use the relative path to leverage the Netlify/Vite proxy
+// The Netlify redirect file (or Vite config) will route this.
 
-const API_URL = 
-  import.meta.env.VITE_API_URL || 
-  LIVE_RENDER_URL;
+const API_URL = '/api/dashboard'; // <--- 🌟 CRITICAL FIX 🌟
+
+// ... then, in useEffect:
+// const response = await fetch(API_URL); // This now fetches from /api/dashboard
 
 // --- Utility Components ---
 
